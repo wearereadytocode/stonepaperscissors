@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+const delay = require('delay');
 
 function PlayGround() {
     
@@ -10,11 +11,7 @@ function PlayGround() {
         console.log(parseInt(random));
         return parseInt(random)
     }
-    const getResult = () =>{
-        if (selected === 1 && rand === 1) {
-            
-        }
-    }
+
     var component
     var oponent
     if (selected === 1) {
@@ -68,33 +65,102 @@ function PlayGround() {
                 <div className="mx-auto relative" >
                     <img className="mt-40" src="bg-triangle.svg" alt="" />
                     <div className="h-36  w-36 shadow-2xl bg-yellow-500 absolute rounded-full top-28 -left-12 ">
-                        <div className="h-28 hover:bg-gray-300 flex shadow-2xl w-28 bg-gray-200 mx-auto mt-4 z-10 rounded-full"  onClick={()=>{
+                        <div className="h-28 hover:bg-gray-300 flex shadow-2xl w-28 bg-gray-200 mx-auto mt-4 z-10 rounded-full"  onClick={async()=>{
                             setselected(1)
+                            const sel = 1
                             setclicked(true)
-                            setInterval(()=>{
-                                setclicked(false)
-                            },3000)
-                            console.log("scissor");
+                            const random = getOponent()
+                            setrand(random)
+                            console.log("Selected:" + sel);
+                            console.log("Rand:" + random);
+                            if (sel === 1 && random === 2) {
+                                console.log("won");
+                            }
+                            if (sel === 1 && random === 3) {
+                                console.log("los");
+                            }
+                            if (sel === 2 && random === 1) {
+                                console.log("los");
+                            }
+                            if (sel === 2 && random === 3) {
+                                console.log("won");
+                            }
+                            if (sel === 3 && random === 1) {
+                                console.log("won");
+                            }
+                            if (sel === 3 && random === 2) {
+                                console.log("los");
+                            }
+                            await delay(2000)
+                            setclicked(false)
                         }}>
                             <img className="mx-auto my-auto" src="icon-scissors.svg" alt="" />
                         </div>
                     </div>
     
                     <div className="h-36 w-36 shadow-2xl bg-pink-500 absolute rounded-full top-28 left-48 ">
-                        <div className="h-28 hover:bg-gray-300 flex shadow-2xl w-28 bg-gray-200 mx-auto mt-4 z-10 rounded-full" onClick={()=>{
+                        <div className="h-28 hover:bg-gray-300 flex shadow-2xl w-28 bg-gray-200 mx-auto mt-4 z-10 rounded-full" onClick={async()=>{
                             setselected(2)
+                            const sel = 1
                             setclicked(true)
-                            console.log("paper");
+                            const random = getOponent()
+                            setrand(random)
+                            console.log("Selected:" + sel);
+                            console.log("Rand:" + random);
+                            if (sel === 1 && random === 2) {
+                                console.log("won");
+                            }
+                            if (sel === 1 && random === 3) {
+                                console.log("los");
+                            }
+                            if (sel === 2 && random === 1) {
+                                console.log("los");
+                            }
+                            if (sel === 2 && random === 3) {
+                                console.log("won");
+                            }
+                            if (sel === 3 && random === 1) {
+                                console.log("won");
+                            }
+                            if (sel === 3 && random === 2) {
+                                console.log("los");
+                            }
+                            await delay(2000)
+                            setclicked(false)
                         }}>
                             <img className="mx-auto my-auto" src="icon-paper.svg" alt="" />
                         </div>
                     </div>
     
                     <div className="h-36 w-36 shadow-2xl bg-indigo-500 absolute rounded-full top-80  left-20 ">
-                        <div className="h-28 hover:bg-gray-300 flex shadow-2xl w-28 bg-gray-200 mx-auto mt-4 z-10 rounded-full" onClick={()=>{
+                        <div className="h-28 hover:bg-gray-300 flex shadow-2xl w-28 bg-gray-200 mx-auto mt-4 z-10 rounded-full" onClick={async()=>{
                             setselected(3)
+                            const sel = 1
                             setclicked(true)
-                            console.log("rock");
+                            const random = getOponent()
+                            setrand(random)
+                            console.log("Selected:" + sel);
+                            console.log("Rand:" + random);
+                            if (sel === 1 && random === 2) {
+                                console.log("won");
+                            }
+                            if (sel === 1 && random === 3) {
+                                console.log("los");
+                            }
+                            if (sel === 2 && random === 1) {
+                                console.log("los");
+                            }
+                            if (sel === 2 && random === 3) {
+                                console.log("won");
+                            }
+                            if (sel === 3 && random === 1) {
+                                console.log("won");
+                            }
+                            if (sel === 3 && random === 2) {
+                                console.log("los");
+                            }
+                            await delay(2000)
+                            setclicked(false)
                         }}>
                             <img className="mx-auto my-auto" src="icon-rock.svg" alt="" />
                         </div>
