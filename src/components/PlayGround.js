@@ -6,7 +6,7 @@ const delay = require('delay');
 function PlayGround() {
     const [selected, setselected] = useState(null)
     const [clicked, setclicked] = useState(false)
-    const [celebration, setcelebration] = useContext(CelebrationContext)
+    const [ , setcelebration] = useContext(CelebrationContext)
     const [score,setscore] = useContext(ScoreContext)
     const [result, setresult] = useState("")
     const [rand, setrand] = useState(null)
@@ -73,7 +73,7 @@ function PlayGround() {
         return (
             <div className="flex">
 
-                <div className="mx-auto relative" >
+                <div className="mx-16 md:mx-auto relative" >
                     <img className="mt-40" src="bg-triangle.svg" alt="" />
                     <div className="h-36  w-36 shadow-2xl bg-yellow-500 absolute rounded-full top-28 -left-12 ">
                         <div className="h-28 hover:bg-gray-300 flex shadow-2xl w-28 bg-gray-200 mx-auto mt-4 z-10 rounded-full"  onClick={async()=>{
@@ -234,7 +234,7 @@ function PlayGround() {
             <>
             <div className="flex pt-32">
 
-                <div className="mx-auto flex space-x-28">
+                <div className="mx-auto flex space-x-20 md:space-x-28">
                     <div className="">
                         <p className="-ml-2 mb-6 -mt-12 text-gray-200 scorefont text-xl">Your selection</p>
                     {component}
@@ -249,13 +249,13 @@ function PlayGround() {
             </div>
             <div className="flex pt-16">
                 {(result === "lose")?<div className="mx-auto">
-                    <p className="text-8xl animate-ping scorefont font-bold text-red-500">You Lose</p>
+                    <p className="text-6xl animate-ping scorefont font-bold md:text-8xl text-red-500">You Lose</p>
                 </div>:null}
                 {(result === "won")?<div className="mx-auto">
-                    <p className="text-8xl scorefont animate-ping font-bold text-green-500">You Won</p>
+                    <p className="text-6xl scorefont animate-ping font-bold md:text-8xl text-green-500">You Won</p>
                 </div>:null}
                 {(result === "tie")?<div className="mx-auto">
-                    <p className="text-8xl scorefont animate-ping font-bold text-white">Tie</p>
+                    <p className="text-6xl scorefont animate-ping font-bold md:text-8xl text-white">Tie</p>
                 </div>:null}
             </div>
             </>

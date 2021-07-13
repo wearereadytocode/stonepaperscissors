@@ -7,8 +7,8 @@ import ScoreBoard from './ScoreBoard'
 import { ScoreContext } from '../contexts/ScoreContext'
 
 function Home() {
-    const [celebration,setcelebration] = useContext(CelebrationContext)
-    const [score,setscore] = useContext(ScoreContext)
+    const [celebration,] = useContext(CelebrationContext)
+    const [score,] = useContext(ScoreContext)
     const { width, height } = useWindowSize()
     return (
         <div className="w-screen h-screen">
